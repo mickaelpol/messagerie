@@ -11,6 +11,8 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="?p=inscription"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="?p=connexion"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href=""><?= isset($_SESSION['uti_pseudo']) ? $_SESSION['uti_pseudo']: "" ?></a></li>
+      <li><a href="?p=deconnecter"><span class="glyphicon glyphicon-off"></span> Disconnect</a></li>
     </ul>
   </div>
 </nav>

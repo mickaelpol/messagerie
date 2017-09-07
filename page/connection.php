@@ -1,4 +1,5 @@
 <?php 
+ session_start();
 
 if (isset($_POST)) {
 	if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
@@ -23,8 +24,7 @@ if (isset($_POST)) {
 			session_start();
 			$_SESSION['uti_pseudo'] = $pseudo;
 			$_SESSION['uti_oid'] = $row['uti_oid'];
-			header('Location: ?p=inscription');
-			$message = "<strong class='text-success'> Connecté</strong>";
+			header('Location: ?p=chat');
 		} else {
 			$message = "<strong class='text-danger'>Identifient incorrect</strong>";
 		}

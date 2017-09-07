@@ -24,6 +24,11 @@ if ($p === 'chat') {
 if ($p === 'inscription') {
 	include('page/inscription.php');
 }
+
+if ($p === 'deconnecter') {
+	include('page/deco.php');
+}
+
 $content = ob_get_clean();
 include('page/templates/default.php');
 

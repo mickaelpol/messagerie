@@ -1,3 +1,13 @@
+<?php 
+
+	session_start();
+	if (!isset($_SESSION['uti_pseudo'])) {
+		header("Location: index.php?p=connexion");
+	}
+
+?>
+
+
 <div class="container-fluid bg-primary text-center text-uppercase">
 	<h1 class="page-header">messagerie</h1>
 </div>

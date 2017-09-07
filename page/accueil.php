@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['uti_pseudo'])) {
+	header("Location: index.php?p=connexion");
+}
+?>
 <div class="container-fluid bg-primary">
 	<h1 class="text-center page-header">Bienvenue sur notre chat</h1>
 </div>
