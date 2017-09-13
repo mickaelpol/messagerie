@@ -1,5 +1,4 @@
 <?php 
- session_start();
 
 if (isset($_POST)) {
 	if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
@@ -24,7 +23,8 @@ if (isset($_POST)) {
 			session_start();
 			$_SESSION['uti_pseudo'] = $pseudo;
 			$_SESSION['uti_oid'] = $row['uti_oid'];
-			header('Location: ?p=chat');
+			header('refresh:5;url=index.php?p=chat');
+			$message = "<div class='container-fluid text-center'" . "<p><span class='text-success text-uppercase'> Connection </span></p>" . "<br>" . "<div class='loader center-block margin-bot'></div>" . "</div>";
 		} else {
 			$message = "<strong class='text-danger'>Identifient incorrect</strong>";
 		}
@@ -35,31 +35,29 @@ if (isset($_POST)) {
 
 
 
-<div class="container-fluid text-center text-uppercase bg-primary">
-	<h1 class="page-header">connexion</h1>
-</div>
-
-<div class="container">
-	<div class="col-xs-12 text-center">
-		<div class="col-xs-4 col-xs-offset-4 radius margin-bot margin-top bg-primary">
+		<p class="text-center"><?= isset($message) ? $message: "" ?><?= isset($loader) ? $loader: "" ?></p>
 			
-			<form method="post">
-				<div class="form-group">
-					<label for="pseudo">Pseudo</label>
-					<input name="pseudo" type="text" class="form-control">
-				</div>
-				<div class="form-group">
-					<label for="mdp">Password</label>
-					<input name="mdp" type="password" class="form-control">
-				</div>
-				<div class="form-group">
-					<input type="reset" class="btn btn-warning btn-md">
-					<input name="valid" type="submit" value="connexion" class="btn btn-success btn-md">
-				</div>
-			</form>
-			
-		</div>
-	</div>
-</div>
+			<div id="login">
 
-<p class="text-center"><?= isset($message) ? $message: "" ?></p>
+				<!-- formulaire de connection -->
+				<form id="loginform" name="loginform" action="" method="post">
+
+					<p> <!-- pseudo -->
+						<label for="pseudo">Pseudo<br>
+							<input id="user_login" type="text" class="input" value="" size="20" tabindex="10"/></label>
+						</p>
+
+						<p> <!-- mot de passe -->
+							<label for="password">Mot de passe<br>
+								<input id="user_pass" type="password" class="input" value="" size="20" tabindex="20"/></label>
+							</p>
+
+							<p><!-- bouton de validation -->
+								<input type="submit" value="se connecter" class="button-primary"/>
+							</p>
+
+						</form>
+
+
+
+					</div>

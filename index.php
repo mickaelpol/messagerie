@@ -28,6 +28,9 @@ if ($p === 'inscription') {
 if ($p === 'deconnecter') {
 	include('page/deco.php');
 }
+if ($p === 'profilUser') {
+	include('page/profilUser.php');
+}
 
 $content = ob_get_clean();
 include('page/templates/default.php');

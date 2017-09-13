@@ -1,5 +1,7 @@
 <?php 
 
+
+
 if (isset($_POST['reload'])) {
   header("refresh:0;url=index.php?p=inscription");
 }
@@ -58,7 +60,7 @@ if (isset($_POST['valid'])) {
 
       $message = "<div class='container-fluid text-center'" . "<p><span class='text-success text-uppercase'> inscription validé </span></p>" . "<br>" . "<div class='loader center-block margin-bot'></div>" . "</div>";
 
-      header("refresh:5;url=index.php?p=inscription");
+      header("refresh:5;url=index.php?p=connexion");
     } 
     else {
       $message = "<div class='container-fluid text-center'" . "<p><span class='text-danger text-uppercase'> le pseudo ou l'email est déjà utilisé </span></p>"."</div>";
@@ -138,7 +140,7 @@ if (isset($_POST['valid'])) {
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-uppercase text-center text-danger">
-      <p><span><?= isset($erreur) ? $erreur : "" ?></span></p>
+      <span><?= isset($erreur) ? $erreur : "" ?></span>
     </div>
   </div>
 </div>
